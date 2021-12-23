@@ -32,6 +32,7 @@ function playerPlay () {
 function playRound () {
     let playerSelection= playerPlay();
     let computerSelection= computerPlay();
+    console.log(playerSelection, computerSelection);
     if (playerSelection=='rock' && computerSelection=='scissors') {
         return("You Win! Rock beats scissors");
     } else if (playerSelection=='scissors' && computerSelection=='rock'){
