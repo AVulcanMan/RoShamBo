@@ -7,6 +7,7 @@ console.log("Hello World!");
 */
 let compChoice;
 let num;
+
 function computerPlay () {
     num= Math.floor (Math.random()*3+1);
     if (num==1){
@@ -18,3 +19,12 @@ function computerPlay () {
     }
     return (compChoice);
 }
+const computerSelection= computerPlay();
+
+let decision;
+function playerPlay () {
+    decision= prompt("What is your move?");
+    decision= decision.toLowerCase();
+    return (decision);
+}
+const playerSelection= playerPlay();
