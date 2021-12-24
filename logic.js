@@ -28,16 +28,16 @@ function playerPlay () {
     return (decision);
 }
 
-
+let playerScore=0;
+let compScore=0;
 function playRound () {
+    let playerScore=0;
     let playerSelection= playerPlay();
     let computerSelection= computerPlay();
-    let playerScore=0;
-    let compScore=0;
     console.log(playerSelection, computerSelection);
     if (playerSelection=='rock' && computerSelection=='scissors') {
         return("You Win! Rock beats scissors");
-        playerScore++;
+        playerScore= playerScore+1;
     } else if (playerSelection=='scissors' && computerSelection=='rock'){
         return ("You lose. Rock beats scissors.");
         compScore++;
