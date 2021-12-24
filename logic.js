@@ -1,4 +1,4 @@
-console.log("Hello World!");
+console.log('Hello World!');
 /* Subproblems
 - Have a computer generate rock, paper, or scissors
 - Make sure console accepts VALID user inputs
@@ -25,7 +25,7 @@ function computerPlay () {
 //Prompt to ask player their move
 let decision;
 function playerPlay () {
-    decision= prompt("What is your move?");
+    decision= prompt('What is your move?');
     decision= decision.toLowerCase();
     return (decision);
 }
