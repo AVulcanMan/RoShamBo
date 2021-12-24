@@ -6,6 +6,7 @@ console.log("Hello World!");
 - Output the result
 */
 
+// Random number function to generate comp's move
 let compChoice;
 let num;
 
@@ -21,7 +22,7 @@ function computerPlay () {
     return (compChoice);
 }
 
-
+//Prompt to ask player their move
 let decision;
 function playerPlay () {
     decision= prompt("What is your move?");
@@ -29,7 +30,7 @@ function playerPlay () {
     return (decision);
 }
 
-
+// Score system, logic to determine result, and output result of the game
 let playerScore=0;
 let compScore=0;
 function playRound () {
@@ -41,22 +42,19 @@ function playRound () {
         return(`You win ${playerSelection} beats ${computerSelection}`);
     } else if (playerSelection=='scissors' && computerSelection=='rock' || playerSelection=='paper' && computerSelection=='scissors' || playerSelection=='rock' && computerSelection=='paper'){
         compScore++;
-        return ("You lose. Rock beats scissors.");
+        return (`You lose. ${computerSelection} beats ${playerSelection}."`);
     }  else {
         return ("It's a tie!");
     }
 }
 
-
+// Run playRound(); five times for a match best of 5
 function game () {
+    compScore=0;
+    playerScore=0;
     for (var i=0; i<5; i++){
         console.log(playRound());
     }
    console.log(`${playerScore} - ${compScore}`);
 }
 game();
-function consistency () {
-    for (var i=0; i<50; i++){
-        console.log(computerPlay());
-    }
-}
