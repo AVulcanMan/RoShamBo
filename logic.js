@@ -5,6 +5,7 @@ console.log("Hello World!");
 - Take selections from both and determine a valid result
 - Output the result
 */
+
 let compChoice;
 let num;
 
@@ -37,7 +38,7 @@ function playRound () {
     console.log(playerSelection, computerSelection);
     if (playerSelection=='rock' && computerSelection=='scissors' || playerSelection=='scissors' && computerSelection=='paper' || playerSelection=='paper' && computerSelection=='rock') {
         playerScore++;
-        return(`You win ${playerSelection} beats computerSelection`);
+        return(`You win ${playerSelection} beats ${computerSelection}`);
     } else if (playerSelection=='scissors' && computerSelection=='rock' || playerSelection=='paper' && computerSelection=='scissors' || playerSelection=='rock' && computerSelection=='paper'){
         compScore++;
         return ("You lose. Rock beats scissors.");
@@ -54,3 +55,8 @@ function game () {
    console.log(`${playerScore} - ${compScore}`);
 }
 game();
+function consistency () {
+    for (var i=0; i<50; i++){
+        console.log(computerPlay());
+    }
+}
