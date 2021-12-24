@@ -28,32 +28,20 @@ function playerPlay () {
     return (decision);
 }
 
+
 let playerScore=0;
 let compScore=0;
 function playRound () {
-    let playerScore=0;
     let playerSelection= playerPlay();
     let computerSelection= computerPlay();
     console.log(playerSelection, computerSelection);
-    if (playerSelection=='rock' && computerSelection=='scissors') {
-        return("You Win! Rock beats scissors");
-        playerScore= playerScore+1;
-    } else if (playerSelection=='scissors' && computerSelection=='rock'){
+    if (playerSelection=='rock' && computerSelection=='scissors' || playerSelection=='scissors' && computerSelection=='paper' || playerSelection=='paper' && computerSelection=='rock') {
+        playerScore++;
+        return(`You win ${playerSelection} beats computerSelection`);
+    } else if (playerSelection=='scissors' && computerSelection=='rock' || playerSelection=='paper' && computerSelection=='scissors' || playerSelection=='rock' && computerSelection=='paper'){
+        compScore++;
         return ("You lose. Rock beats scissors.");
-        compScore++;
-    } else if (playerSelection=='scissors' && computerSelection=='paper'){
-        return ("You win! Scissors beats paper");
-        playerScore++;
-    } else if (playerSelection=='paper' && computerSelection=='scissors'){
-        return ("You lose. Scissors beats paper.");
-        compScore++;
-    } else if (playerSelection=='paper' && computerSelection=='rock'){
-        return ("You win! Paper beats rock");
-        playerScore++;
-    } else if (playerSelection=='rock' && computerSelection=='paper'){
-        return ("You lose. Paper beats rock.");
-        compScore++;
-    } else {
+    }  else {
         return ("It's a tie!");
     }
 }
